@@ -281,3 +281,22 @@ def winning_team
     return nest[:away][:team_name]
   end
 end
+
+def player_with_longest_name
+  nest = game_hash
+  longest_name = ""
+  longest_name_length = 0
+  nest[:home][:players].each do |player|
+    if player[:player_name].length > longest_name_length
+      longest_name = player[:player_name]
+      longest_name_length = player[:player_name].length
+    else
+      nest[:away][:players].each do |player|
+        if player[:player_name].length > longest_name_length
+          
+          
+        end
+      end
+    end
+  end
+end
