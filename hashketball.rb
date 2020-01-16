@@ -225,11 +225,15 @@ def big_shoe_rebounds
     if player[:shoe] > biggest_shoe
       biggest_shoe = player[:shoe]
       player_w_biggest_shoe = player[:player_name]
-    else
-      nest[:home][:players].each do |player|
-        if player
+    end
+    nest[:away][:players].each do |player|
+        if player[:shoe] > biggest_shoe
+          biggest_shoe = player[:shoe]
+          player_w_biggest_shoe = player[:player_name]
+        end
       end
     end
   end
+  return player_w_biggest_shoe
 end
 
