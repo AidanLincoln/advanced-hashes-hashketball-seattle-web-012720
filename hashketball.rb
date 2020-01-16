@@ -239,9 +239,8 @@ def big_shoe_rebounds
     else
       nest[:away][:players]. each do |player|
         if player[:player_name] == player_w_biggest_shoe
-          
-          
-        return player[:rebounds]
+          return player[:rebounds]
+        end  
       end
     end
   end
