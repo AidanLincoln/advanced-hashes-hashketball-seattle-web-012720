@@ -213,6 +213,7 @@ def player_stats(player_name)
       end
     end
   end
+  players_stats.delete(:player_name)
   return players_stats
 end
 
