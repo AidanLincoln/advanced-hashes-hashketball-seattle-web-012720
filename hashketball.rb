@@ -202,6 +202,16 @@ end
 def player_stats(player_name)
   nest = game_hash
   nest[:home][:players].each do |player|
+    if player[:player_name] == player_name
+      return player
+    else
+      nest[:away][:players].each do |player|
+        if player[:player_name] == player_name
+          return player
+        end
+      end
+    end
+  end
 end
 
 
