@@ -293,10 +293,11 @@ def player_with_longest_name
     else
       nest[:away][:players].each do |player|
         if player[:player_name].length > longest_name_length
-          
-          
+          longest_name = player[:player_name]
+          longest_name_length = player[:player_name].length
         end
       end
     end
   end
+  return longest_name
 end
