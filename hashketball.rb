@@ -304,5 +304,24 @@ end
 
 def long_name_steals_a_ton?
   nest = game_hash
-  
+  top_steals = 0
+  top_stealer = ""
+  steals_a_ton = false
+  nest[:home][:players].each do |player|
+    if player[:steals] > top_steals
+      top_stealer = player[:player_name]
+      top_steals = player[:steals]
+    else
+      nest[:away][:players].each do |player|
+        if player[:steals] > top_steals
+          top_stealer = player[:player_name]
+          top_steals = player[:steals]
+        end
+      end
+    end
+  end
+  if top_stealer == player_with_longest_name
+    steals_a_ton = true
+  end
+  return steals_a_ton
 end
