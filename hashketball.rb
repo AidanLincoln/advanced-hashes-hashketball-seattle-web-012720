@@ -189,15 +189,11 @@ def player_numbers(team_name)
   player_number_array = []
   if nest[:home][:team_name] == team_name
     nest[:home][:players].each do |player|
-      player.each do |stat, value|
-        player_number_array.push(player[:number])
-      end
+      player_number_array.push(player[:number])
     end
   else
     nest[:away][:players].each do |player|
-      player.each do |stat, value|
-        player_number_array.push(player[:number])
-      end
+      player_number_array.push(player[:number])
     end
   end
   return player_number_array
