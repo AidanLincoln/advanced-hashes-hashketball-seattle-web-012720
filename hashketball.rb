@@ -266,6 +266,7 @@ def most_points_scored
 end
 
 def winning_team
+  nest = game_hash
   home_team_points = 0
   away_team_points = 0
   nest[:home][:players].each do |player|
