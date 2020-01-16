@@ -199,5 +199,9 @@ def player_numbers(team_name)
   return player_number_array
 end
 
+def player_stats(player_name)
+  nest = game_hash
+  nest[:home][:players].each do |player|
+end
 
 
