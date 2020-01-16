@@ -264,3 +264,19 @@ def most_points_scored
   end
   return player_w_most_points
 end
+
+def winning_team
+  home_team_points = 0
+  away_team_points = 0
+  nest[:home][:players].each do |player|
+    home_team_points += player[:points]
+  end
+  nest[:away][:players].each do |player|
+    away_team_points += player[:points]
+  end
+  if home_team_points > away_team_points
+    return nest[:home][:team_name]
+  else
+    return nest[:away][:team_name]
+  end
+end
